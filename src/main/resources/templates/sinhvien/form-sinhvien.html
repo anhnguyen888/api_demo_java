@@ -1,0 +1,101 @@
+<!--
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Form Sinh Viên</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<section layout:fragment="content" class="container mt-5">
+    <h1 class="mb-4">Form Sinh Viên</h1>
+    <form th:action="@{/sinhvien}" th:object="${sinhVien}" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="ten" class="form-label">Tên:</label>
+            <input type="text" th:field="*{ten}" class="form-control" th:classappend="${#fields.hasErrors('ten')} ? 'is-invalid'" id="ten" required>
+            <div th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="tuoi" class="form-label">Tuổi:</label>
+            <input type="text" th:field="*{tuoi}" class="form-control" th:classappend="${#fields.hasErrors('tuoi')} ? 'is-invalid'" id="tuoi" required>
+            <div th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="khoa" class="form-label">Khoa:</label>
+            <input type="text" th:field="*{khoa}" class="form-control" th:classappend="${#fields.hasErrors('khoa')} ? 'is-invalid'" id="khoa" required>
+            <div th:if="${#fields.hasErrors('khoa')}" th:errors="*{khoa}" class="invalid-feedback"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>-->
+
+
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Sinh Viên</title>
+</head>
+<body>
+<h1>Form Sinh Viên</h1>
+<form th:action="@{/sinhvien}" th:object="${sinhVien}" method="post">
+    <p>Tên: <input type="text" th:field="*{ten}" /></p>
+    <p th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}" style="color: red;"></p>
+    <p>Tuổi: <input type="text" th:field="*{tuoi}" /></p>
+    <p th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}" style="color: red;"></p>
+    <p>Khoa: <input type="text" th:field="*{khoa}" /></p>
+    <p th:if="${#fields.hasErrors('khoa')}" th:errors="*{khoa}" style="color: red;"></p>
+    <p><button type="submit">Submit</button></p>
+</form>
+</body>
+</html>-->
+
+
+<!--Thêm-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Form Sinh Viên</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<section layout:fragment="content" class="container mt-5">
+    <h1 class="mb-4">Form Sinh Viên</h1>
+    <form th:action="@{/sinhvien}" th:object="${sinhVien}" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="ten" class="form-label">Tên:</label>
+            <input type="text" th:field="*{ten}" class="form-control" th:classappend="${#fields.hasErrors('ten')} ? 'is-invalid'" id="ten" required>
+            <div th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="tuoi" class="form-label">Tuổi:</label>
+            <input type="number" th:field="*{tuoi}" class="form-control" th:classappend="${#fields.hasErrors('tuoi')} ? 'is-invalid'" id="tuoi" required>
+            <div th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="khoa" class="form-label">Khoa:</label>
+            <input type="text" th:field="*{khoa}" class="form-control" th:classappend="${#fields.hasErrors('khoa')} ? 'is-invalid'" id="khoa" required>
+            <div th:if="${#fields.hasErrors('khoa')}" th:errors="*{khoa}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" th:field="*{email}" class="form-control" th:classappend="${#fields.hasErrors('email')} ? 'is-invalid'" id="email" required>
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="ngaySinh" class="form-label">Ngày Sinh:</label>
+            <input type="date" th:field="*{ngaySinh}" class="form-control" th:classappend="${#fields.hasErrors('ngaySinh')} ? 'is-invalid'" id="ngaySinh" required>
+            <div th:if="${#fields.hasErrors('ngaySinh')}" th:errors="*{ngaySinh}" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <label for="soDienThoai" class="form-label">Số Điện Thoại:</label>
+            <input type="text" th:field="*{soDienThoai}" class="form-control" th:classappend="${#fields.hasErrors('soDienThoai')} ? 'is-invalid'" id="soDienThoai" required>
+            <div th:if="${#fields.hasErrors('soDienThoai')}" th:errors="*{soDienThoai}" class="invalid-feedback"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
